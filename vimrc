@@ -1,5 +1,11 @@
 set nocompatible                  " Use Vim settings over Vi. Must come first because it changes other options.
 
+" Add Pathogen to runtime path
+set runtimepath+=$HOME/.vim/bundle/pathogen
+" Load all plugins in bundle
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
 syntax enable                     " Turn on syntax highlighting.
 filetype plugin indent on         " Turn on file type detection.
 
@@ -65,7 +71,7 @@ set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
-colorscheme vividchalk
+"colorscheme vividchalk
 "colorscheme topfunky-light
 
 " \ is the default leader character
