@@ -1,5 +1,4 @@
-set nocompatible                  " Use Vim settings over Vi. Must come first because it changes other options.
-
+set nocompatible                  " Use Vim settings over Vi. Must come first because it changes other options.  
 " Add Pathogen to runtime path
 set runtimepath+=$HOME/.vim/bundle/pathogen
 " Load all plugins in bundle
@@ -71,6 +70,7 @@ set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
+"set background=dark " Some color schemes require this, apparently
 colorscheme railscasts
 "colorscheme vividchalk
 "colorscheme topfunky-light
@@ -91,6 +91,14 @@ map <leader>tm :tabmove
 
 " Uncomment to use Jamis Buck's file opening plugin
 "map <Leader>t :FuzzyFinderTextMate<Enter>
+
+" Cmd-Shift-Up/Down to move selection up/down (add =gv to reindent after move)
+vmap <D-S-Up> :m-2<CR>gv
+vmap <D-S-Down> :m'>+<CR>gv
+
+" Cmd-Alt-Left/Right to Indent selection left/right
+vmap <D-A-Left> <gv
+vmap <D-A-Right> >gv
 
 " Controversial...swap colon and semicolon for easier commands
 "nnoremap ; :
